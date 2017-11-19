@@ -57,5 +57,6 @@ setup(
         'BeautifulSoup',
         'requests',
         'unidecode',
-        ]
+        ],
+    scripts=['bin/ctt']
 )
