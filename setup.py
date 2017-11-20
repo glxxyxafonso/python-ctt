@@ -44,7 +44,7 @@ setup(
         ],
     author='Bruno Martins',
     author_email='bscmartins@gmail.com',
-    url='',
+    url='https://github.com/bmartins/python-ctt',
     packages=[
         'ctt'
         ],
@@ -57,6 +57,8 @@ setup(
         'BeautifulSoup',
         'requests',
         'unidecode',
+        'pytz',
+        'datetime',
         ],
     scripts=['bin/ctt']
 )

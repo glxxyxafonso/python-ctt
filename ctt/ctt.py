@@ -3,6 +3,8 @@ import re
 import sys
 import requests
 import unidecode
+from datetime import datetime
+from pytz import timezone
 
 
 def _get_html(package_id):
@@ -46,6 +48,24 @@ def _is_date(d):
     else:
         return False
 
+def _get_current_date_time():
+    d = datetime.now(timezone('Europe/Lisbon'))
+    year = str(d.year)
+    month = str(d.month)
+    day = str(d.day)
+    hour = str(d.hour)
+    minute = str(d.minute)
+    if int(month) < 10:
+        month = "0" + month
+    if int(day) < 10:
+        day = "0" + day
+    if int(hour) < 10:
+        hour = "0" + hour
+    if int(minute) < 10:
+        minute = "0" + minute
+
+    return year + "/" + month + "/" + day + " " + hour + ":" + minute
+
 
 def get_package_status(p_id):
 
@@ -63,7 +83,8 @@ def get_package_status(p_id):
     package["id"] = d.pop(0)
     d.pop(0)
     if d[0] == 'N/A':
-        package["status"] = [{"status": "Not Found", "date": None, "reason": None, "place": None, "receiver": None}]
+        package["status"] = [{"status": "Not Found", "date": _get_current_date_time(), "reason": None, "place": None, "receiver": None}]
+        package["id"] = p_id
         return package
 
     s_date = d.pop(0)
