@@ -54,7 +54,7 @@ setup(
         'virtualenv>=1.11.6',
         'pep8>=1.5.7',
         'pyflakes>=0.8.1',
-        'BeautifulSoup',
+        'BeautifulSoup4',
         'requests',
         'unidecode',
         'pytz',
