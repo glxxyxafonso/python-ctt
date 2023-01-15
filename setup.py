@@ -7,7 +7,7 @@
 
     Interface to CTT ( Portuguese Postal Service )
 
-    :copyright: (c) 2017 by Bruno Martins.
+    :copyright: (c) 2017 by Bruno Martins. Edited by glxxyxafonso.
     :license: see LICENSE for more details.
 """
 
@@ -42,11 +42,11 @@ setup(
     long_description=read('README.rst'),
     classifiers=[
         ],
-    author='Bruno Martins',
-    author_email='bscmartins@gmail.com',
-    url='https://github.com/bmartins/python-ctt',
+    author='Afonso Beato',
+    author_email='afonso.beato@glxxy.xyz',
+    url='https://github.com/glxxyxafonso/python-ctt/',
     packages=[
-        'ctt'
+        'cttbtr'
         ],
     platforms='any',
     license='LICENSE',
